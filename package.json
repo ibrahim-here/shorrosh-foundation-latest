@@ -5,8 +5,8 @@
   "description": "Shorrosh Family Foundation Website",
   "main": "index.js",
   "scripts": {
+    "build": "chmod +x node_modules/.bin/vite && vite build",
     "dev": "vite",
-    "build": "vite build",
     "preview": "vite preview",
     "start": "vite",
     "start:server": "node server.js"
