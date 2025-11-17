@@ -3161,17 +3161,16 @@ const ShorroshFoundation = () => {
 
   const navigation = [
     { name: 'Home', id: 'home' },
-    { name: 'About Us', id: 'about' },
+    { name: 'About', id: 'about' },
     { name: 'Updates', id: 'updates' },
     { name: 'Events', id: 'events' },
     { name: 'Restaurants', id: 'restaurants' },
-    { name: 'Our Causes', id: 'causes' },
+    { name: 'Causes', id: 'causes' },
     { name: 'Auction', id: 'auction' },
     { name: 'Store', id: 'store' },
-    { name: 'Veteran Business', id: 'veteran-business' },
+    { name: 'Veterans', id: 'veteran-business' },
     { name: 'Donate', id: 'donate' },
-    { name: 'Sponsors', id: 'sponsors' },
-    { name: 'Admin', id: 'admin-link' }
+    { name: 'Sponsors', id: 'sponsors' }
   ];
 
   const getTimeRemaining = (endTime) => {
@@ -3198,19 +3197,13 @@ const ShorroshFoundation = () => {
           </button>
           
           {/* Navigation - More Compact */}
-          <nav className="hidden lg:flex space-x-3 xl:space-x-6 items-center flex-shrink-0">
+          <nav className="hidden lg:flex space-x-2 xl:space-x-4 items-center flex-shrink-0">
             {navigation.map(item => (
               <button
                 key={item.id}
-                onClick={() => {
-                  if (item.id === 'admin-link') {
-                    setCurrentPage(isAdmin ? 'admin' : 'admin-login');
-                  } else {
-                    setCurrentPage(item.id);
-                  }
-                }}
-                className={`text-xs xl:text-sm font-semibold transition-colors whitespace-nowrap ${
-                  (item.id !== 'admin-link' && currentPage === item.id) || (item.id === 'admin-link' && (currentPage === 'admin' || currentPage === 'admin-login'))
+                onClick={() => setCurrentPage(item.id)}
+                className={`text-xs xl:text-sm font-semibold transition-colors whitespace-nowrap px-1 ${
+                  currentPage === item.id
                     ? 'text-red-600'
                     : 'text-gray-700 hover:text-red-600'
                 }`}
@@ -3221,7 +3214,7 @@ const ShorroshFoundation = () => {
           </nav>
 
           {/* Right Section - More Compact */}
-          <div className="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
+          <div className="flex items-center space-x-2 flex-shrink-0">
             {/* Social Media Links - Hidden on small screens */}
             <div className="hidden xl:flex items-center space-x-2">
               <a 
@@ -3244,28 +3237,19 @@ const ShorroshFoundation = () => {
               </a>
             </div>
             
-            {/* Donate Button - More Compact */}
-            <button
-              onClick={() => setCurrentPage('donate')}
-              className="bg-red-600 text-white px-3 py-1.5 sm:px-6 sm:py-2 rounded-full hover:bg-red-700 transition-colors font-semibold text-xs sm:text-sm whitespace-nowrap"
-            >
-              <span className="hidden sm:inline">Donate Now</span>
-              <span className="sm:hidden">Donate</span>
-            </button>
-            
-            {/* Admin Button - More Compact */}
+            {/* Admin Button - Icon Only */}
             {isAdmin ? (
               <button
                 onClick={() => setCurrentPage('admin')}
-                className="bg-blue-900 text-white px-3 py-1.5 sm:px-6 sm:py-2 rounded-full hover:bg-blue-800 transition-colors font-semibold text-xs sm:text-sm whitespace-nowrap"
+                className="bg-blue-900 text-white p-2 rounded-full hover:bg-blue-800 transition-colors"
+                title="Admin Panel"
               >
-                <span className="hidden sm:inline">Admin Panel</span>
-                <span className="sm:hidden">Admin</span>
+                <Lock className="w-4 h-4" />
               </button>
             ) : (
               <button
                 onClick={() => setCurrentPage('admin-login')}
-                className="text-gray-700 hover:text-blue-900 transition-colors p-1"
+                className="text-gray-700 hover:text-blue-900 transition-colors p-2"
                 title="Admin Login"
               >
                 <Lock className="w-4 h-4" />
