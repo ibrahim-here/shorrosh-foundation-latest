@@ -2629,7 +2629,10 @@ const ShorroshFoundation = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (loginForm.username === 'ibrahim' && loginForm.password === '1234') {
+    if (
+      (loginForm.username === 'ibrahim' && loginForm.password === '1234') ||
+      (loginForm.username === 'zarian' && loginForm.password === '1234')
+    ) {
       setIsAdmin(true);
       setCurrentPage('admin');
       setLoginForm({ username: '', password: '' });
