@@ -3302,7 +3302,32 @@ const ShorroshFoundation = () => {
     </header>
   );
 
-  const HomePage = () => (
+  const HomePage = () => {
+    const [featuredProducts, setFeaturedProducts] = useState([]);
+    const [loadingProducts, setLoadingProducts] = useState(true);
+
+    useEffect(() => {
+      fetchFeaturedProducts();
+    }, []);
+
+    const fetchFeaturedProducts = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('store_products')
+          .select('*')
+          .eq('is_available', true)
+          .limit(3);
+        
+        if (error) throw error;
+        setFeaturedProducts(data || []);
+      } catch (err) {
+        console.error('Error fetching featured products:', err);
+      } finally {
+        setLoadingProducts(false);
+      }
+    };
+
+    return (
     <div className="pt-20">
       <section className="relative text-white py-24 overflow-hidden min-h-[70vh]">
         {/* Background slides */}
@@ -3602,6 +3627,118 @@ const ShorroshFoundation = () => {
                 <p className="text-sm text-blue-200">Fighting hunger and feeding hope in our community</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Products Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-red-600 font-semibold mb-2">SUPPORT OUR MISSION</p>
+            <h2 className="text-4xl font-bold text-blue-900 mb-4">Foundation Merchandise</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Show your support with our exclusive merchandise. 100% of proceeds go directly to our causes.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Hardcoded featured products - will be replaced with database products later */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop" 
+                  alt="Foundation T-Shirt" 
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <div className="text-xs text-red-600 font-semibold mb-2">Apparel</div>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">Foundation T-Shirt</h3>
+                <p className="text-gray-600 text-sm mb-4">Premium quality t-shirt with foundation logo</p>
+                <div className="text-2xl font-bold text-blue-900 mb-4">$25.00</div>
+                <button
+                  onClick={() => setCurrentPage('store')}
+                  className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors font-bold"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop" 
+                  alt="Coffee Mug" 
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <div className="text-xs text-red-600 font-semibold mb-2">Drinkware</div>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">Coffee Mug</h3>
+                <p className="text-gray-600 text-sm mb-4">Ceramic mug with foundation emblem</p>
+                <div className="text-2xl font-bold text-blue-900 mb-4">$15.00</div>
+                <button
+                  onClick={() => setCurrentPage('store')}
+                  className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors font-bold"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=400&h=400&fit=crop" 
+                  alt="Commemorative Pin" 
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <div className="text-xs text-red-600 font-semibold mb-2">Accessories</div>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">Commemorative Pin</h3>
+                <p className="text-gray-600 text-sm mb-4">Collectible enamel pin honoring our mission</p>
+                <div className="text-2xl font-bold text-blue-900 mb-4">$10.00</div>
+                <button
+                  onClick={() => setCurrentPage('store')}
+                  className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors font-bold"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=400&h=400&fit=crop" 
+                  alt="Foundation Keychain" 
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <div className="text-xs text-red-600 font-semibold mb-2">Accessories</div>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">Foundation Keychain</h3>
+                <p className="text-gray-600 text-sm mb-4">Durable metal keychain with foundation emblem</p>
+                <div className="text-2xl font-bold text-blue-900 mb-4">$8.00</div>
+                <button
+                  onClick={() => setCurrentPage('store')}
+                  className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors font-bold"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="text-center mt-12">
+            <button
+              onClick={() => setCurrentPage('store')}
+              className="inline-flex items-center bg-blue-900 text-white px-8 py-4 rounded-full hover:bg-blue-800 transition-colors font-bold text-lg"
+            >
+              View All Products
+              <ChevronRight className="w-5 h-5 ml-2" />
+            </button>
           </div>
         </div>
       </section>
