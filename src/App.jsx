@@ -3606,56 +3606,6 @@ const ShorroshFoundation = () => {
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-red-600 font-semibold mb-2">SUPPORT OUR CAUSE</p>
-            <h2 className="text-4xl font-bold text-blue-900">Featured Auction Items</h2>
-          </div>
-          <div className="flex flex-col md:flex-row gap-8">
-            {data.auctions.slice(0, 3).map(auction => {
-              const timeLeft = getTimeRemaining(auction.endTime);
-              return (
-                <div key={auction.id} className="w-full md:w-1/3 bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow">
-                  <img src={auction.image} alt={auction.title} className="w-full h-48 object-cover" />
-                  <div className="p-6">
-                    <h3 className="font-bold text-xl mb-2 text-blue-900">{auction.title}</h3>
-                    <p className="text-gray-600 mb-4">{auction.description}</p>
-                    <div className="flex justify-between items-center mb-4">
-                      <div>
-                        <p className="text-sm text-gray-500">Current Bid</p>
-                        <p className="text-2xl font-bold text-red-600">${auction.currentBid.toLocaleString()}</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-sm text-gray-500">Time Left</p>
-                        <p className="font-semibold">{timeLeft.days}d {timeLeft.hours}h</p>
-                      </div>
-                    </div>
-                    <button
-                      onClick={() => {
-                        setSelectedAuction(auction);
-                        setCurrentPage('auction');
-                      }}
-                      className="w-full bg-blue-900 text-white py-2 rounded-lg hover:bg-blue-800 transition-colors"
-                    >
-                      Place Bid
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <div className="text-center mt-8">
-            <button
-              onClick={() => setCurrentPage('auction')}
-              className="text-red-600 font-semibold inline-flex items-center hover:text-red-700"
-            >
-              View All Auction Items <ChevronRight className="w-4 h-4 ml-1" />
-            </button>
-          </div>
-        </div>
-      </section>
-
       {/* Google Reviews Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
