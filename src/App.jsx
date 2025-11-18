@@ -124,7 +124,7 @@ function EmailCollectionModal({ isOpen, onClose, onSubmit }) {
                   <Facebook className="w-7 h-7 text-white" />
                 </a>
                 <a
-                  href="https://www.instagram.com/the_shorrosh_family_foundation"
+                  href="https://www.instagram.com/the_shorrosh_family_foundation?igsh=dWFhdXR3b2Mxc2h0"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-full flex items-center justify-center transition-colors"
@@ -3169,7 +3169,6 @@ const ShorroshFoundation = () => {
     { name: 'Events', id: 'events' },
     { name: 'Restaurants', id: 'restaurants' },
     { name: 'Causes', id: 'causes' },
-    { name: 'Auction', id: 'auction' },
     { name: 'Store', id: 'store' },
     { name: 'Veterans', id: 'veteran-business' },
     { name: 'Donate', id: 'donate' },
@@ -3221,22 +3220,22 @@ const ShorroshFoundation = () => {
             {/* Social Media Links - Hidden on small screens */}
             <div className="hidden xl:flex items-center space-x-2">
               <a 
-                href="https://www.instagram.com/the_shorrosh_family_foundation?igsh=MWF6ZnpnYmgxMDNtcg==" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-red-600 transition-colors"
-                title="Follow us on Instagram"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a 
-                href="https://www.facebook.com/shorroshfamfoundation?mibextid=wwXlfr&mibextid=wwXlfr" 
+                href="https://www.facebook.com/shorroshfamfoundation" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-red-600 transition-colors"
                 title="Follow us on Facebook"
               >
                 <Facebook className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.instagram.com/the_shorrosh_family_foundation?igsh=dWFhdXR3b2Mxc2h0" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-red-600 transition-colors"
+                title="Follow us on Instagram"
+              >
+                <Instagram className="w-4 h-4" />
               </a>
             </div>
             
@@ -4890,7 +4889,7 @@ const ShorroshFoundation = () => {
             <h3 className="text-xl font-bold">Follow Us & Stay Connected</h3>
           </div>
           <p className="text-red-100 mb-4">
-            Tag us in your posts, check in on Google, and follow for updates on our causes!
+            Tag us in your posts, check in on Google, and follow us on Facebook & Instagram for updates!
           </p>
           <div className="flex justify-center gap-4 mb-4">
             <a
@@ -4903,22 +4902,13 @@ const ShorroshFoundation = () => {
               <Facebook className="w-6 h-6" />
             </a>
             <a
-              href="https://www.instagram.com/the_shorrosh_family_foundation"
+              href="https://www.instagram.com/the_shorrosh_family_foundation?igsh=dWFhdXR3b2Mxc2h0"
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
               aria-label="Follow us on Instagram"
             >
               <Instagram className="w-6 h-6" />
-            </a>
-            <a
-              href="https://www.tiktok.com/@shorroshfoundation"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
-              aria-label="Follow us on TikTok"
-            >
-              <Video className="w-6 h-6" />
             </a>
           </div>
           {/* Google Review Button */}
@@ -4955,22 +4945,13 @@ const ShorroshFoundation = () => {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://www.instagram.com/the_shorrosh_family_foundation"
+                href="https://www.instagram.com/the_shorrosh_family_foundation?igsh=dWFhdXR3b2Mxc2h0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-200 hover:text-white transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.tiktok.com/@shorroshfoundation"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-200 hover:text-white transition-colors"
-                aria-label="TikTok"
-              >
-                <Video className="w-5 h-5" />
               </a>
             </div>
           </div>
