@@ -8,10 +8,6 @@ import wifeImg from './images/wife.jpg';
 import weddingImg from './images/wedding-pic.jpg';
 import weddingRight from './images/wedding.jpg';
 import logoImg from './images/final-logo.png';
-import tshirtImg from './images/store/t-shirt.png';
-import mugImg from './images/store/20251122_2109_Phoenix Mug Design_remix_01kap555czebg9xppp1wz8aesd.png';
-import keychainImg from './images/store/20251122_2134_Logo Keychain Display_remix_01kap6jxg4fatt534nrdw6wvsd.png';
-import pinImg from './images/store/20251122_2245_Embossed Phoenix Badge_remix_01kapap0dhe0zrcwn7rn9yssk1.png';
 
 // Email Collection Modal Component
 function EmailCollectionModal({ isOpen, onClose, onSubmit }) {
@@ -1342,30 +1338,30 @@ const MerchandiseStorePage = ({ setCurrentPage }) => {
   const products = [
     {
       id: 1,
-      name: 'Foundation T-Shirt',
-      description: 'Premium quality t-shirt with foundation logo',
-      image: tshirtImg,
+      name: 'Foundation T-Shirts',
+      description: 'Premium quality t-shirts with foundation logo',
+      image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop',
       category: 'Apparel'
     },
     {
       id: 2,
-      name: 'Phoenix Mug',
-      description: 'Ceramic mug with phoenix emblem design',
-      image: mugImg,
+      name: 'Coffee Mugs',
+      description: 'Ceramic mugs supporting our causes',
+      image: 'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop',
       category: 'Drinkware'
     },
     {
       id: 3,
-      name: 'Phoenix Badge Pin',
-      description: 'Embossed phoenix badge pin honoring our mission',
-      image: pinImg,
+      name: 'Commemorative Pins',
+      description: 'Collectible pins honoring our mission',
+      image: 'https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=400&h=400&fit=crop',
       category: 'Accessories'
     },
     {
       id: 4,
-      name: 'Logo Keychain',
-      description: 'Durable keychain with foundation logo display',
-      image: keychainImg,
+      name: 'Foundation Keychains',
+      description: 'Durable keychains with foundation emblem',
+      image: 'https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=400&h=400&fit=crop',
       category: 'Accessories'
     }
   ];
@@ -1401,11 +1397,11 @@ const MerchandiseStorePage = ({ setCurrentPage }) => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {products.map((product) => (
               <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="relative bg-gray-50">
+                <div className="relative">
                   <img 
                     src={product.image} 
                     alt={product.name} 
-                    className="w-full h-64 object-contain"
+                    className="w-full h-64 object-cover"
                   />
                   <div className="absolute top-4 right-4 bg-amber-500 text-blue-900 px-3 py-1 rounded-full font-bold text-sm">
                     Coming Soon
@@ -3670,13 +3666,13 @@ const ShorroshFoundation = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Featured Products */}
+            {/* Hardcoded featured products - will be replaced with database products later */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="relative">
                 <img 
-                  src={tshirtImg} 
+                  src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop" 
                   alt="Foundation T-Shirt" 
-                  className="w-full h-64 object-contain bg-gray-50"
+                  className="w-full h-64 object-cover"
                 />
               </div>
               <div className="p-6">
@@ -3696,15 +3692,15 @@ const ShorroshFoundation = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="relative">
                 <img 
-                  src={mugImg} 
-                  alt="Phoenix Mug" 
-                  className="w-full h-64 object-contain bg-gray-50"
+                  src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop" 
+                  alt="Coffee Mug" 
+                  className="w-full h-64 object-cover"
                 />
               </div>
               <div className="p-6">
                 <div className="text-xs text-red-600 font-semibold mb-2">Drinkware</div>
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Phoenix Mug</h3>
-                <p className="text-gray-600 text-sm mb-4">Ceramic mug with phoenix emblem design</p>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">Coffee Mug</h3>
+                <p className="text-gray-600 text-sm mb-4">Ceramic mug with foundation emblem</p>
                 <div className="text-2xl font-bold text-blue-900 mb-4">$15.00</div>
                 <button
                   onClick={() => setCurrentPage('store')}
@@ -3718,15 +3714,15 @@ const ShorroshFoundation = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="relative">
                 <img 
-                  src={pinImg} 
-                  alt="Embossed Phoenix Badge" 
-                  className="w-full h-64 object-contain bg-gray-50"
+                  src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=400&h=400&fit=crop" 
+                  alt="Commemorative Pin" 
+                  className="w-full h-64 object-cover"
                 />
               </div>
               <div className="p-6">
                 <div className="text-xs text-red-600 font-semibold mb-2">Accessories</div>
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Phoenix Badge Pin</h3>
-                <p className="text-gray-600 text-sm mb-4">Embossed phoenix badge pin honoring our mission</p>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">Commemorative Pin</h3>
+                <p className="text-gray-600 text-sm mb-4">Collectible enamel pin honoring our mission</p>
                 <div className="text-2xl font-bold text-blue-900 mb-4">$10.00</div>
                 <button
                   onClick={() => setCurrentPage('store')}
@@ -3740,15 +3736,15 @@ const ShorroshFoundation = () => {
             <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
               <div className="relative">
                 <img 
-                  src={keychainImg} 
-                  alt="Logo Keychain" 
-                  className="w-full h-64 object-contain bg-gray-50"
+                  src="https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=400&h=400&fit=crop" 
+                  alt="Foundation Keychain" 
+                  className="w-full h-64 object-cover"
                 />
               </div>
               <div className="p-6">
                 <div className="text-xs text-red-600 font-semibold mb-2">Accessories</div>
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Logo Keychain</h3>
-                <p className="text-gray-600 text-sm mb-4">Durable keychain with foundation logo display</p>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">Foundation Keychain</h3>
+                <p className="text-gray-600 text-sm mb-4">Durable metal keychain with foundation emblem</p>
                 <div className="text-2xl font-bold text-blue-900 mb-4">$8.00</div>
                 <button
                   onClick={() => setCurrentPage('store')}
