@@ -2154,18 +2154,42 @@ const DonationItemsPage = ({ setCurrentPage }) => {
       {/* Restaurant Partnership Mention */}
       <section className="py-16 bg-gradient-to-r from-amber-500 to-amber-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="flex-1">
-              <h2 className="text-3xl font-bold mb-4">Dine & Donate at Denny's</h2>
-              <p className="text-xl text-amber-100">
-                Visit our partner restaurant Denny's and 10 cents from every tray goes directly to supporting our causes!
-              </p>
-            </div>
-            <div className="flex-shrink-0">
-              <div className="bg-white text-amber-600 rounded-full px-8 py-4 font-bold text-2xl">
-                10¢ per tray
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold mb-4">Dine & Donate at Denny's</h2>
+            <p className="text-xl text-amber-100 mb-6">
+              Enjoy delicious meals while supporting our causes! Just tell the cashier you're from the Shorrosh Foundation.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
+              <div className="text-center">
+                <div className="bg-white text-amber-600 rounded-full px-6 py-3 font-bold text-3xl inline-block mb-3">
+                  15¢
+                </div>
+                <h3 className="font-bold text-xl mb-2">Premium Items</h3>
+                <ul className="text-amber-100 space-y-1">
+                  <li>• American Slam</li>
+                  <li>• Kids Meal with Meat</li>
+                </ul>
               </div>
             </div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
+              <div className="text-center">
+                <div className="bg-white text-amber-600 rounded-full px-6 py-3 font-bold text-3xl inline-block mb-3">
+                  10¢
+                </div>
+                <h3 className="font-bold text-xl mb-2">Standard Items</h3>
+                <ul className="text-amber-100 space-y-1">
+                  <li>• Bacon Cheeseburger</li>
+                  <li>• Desserts</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="text-center mt-8">
+            <p className="text-lg font-semibold bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3 inline-block border border-white/30">
+              💡 Remember: Tell the cashier you're from the Shorrosh Foundation to activate the donation!
+            </p>
           </div>
         </div>
       </section>
@@ -4364,26 +4388,48 @@ const ShorroshFoundation = () => {
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/20">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="flex-1 text-center md:text-left">
-                <h3 className="text-3xl font-bold mb-4">Featured Partner: Denny's</h3>
-                <p className="text-xl text-amber-100 mb-6">
-                  Visit Denny's and 10 cents from every tray purchased goes directly to the Shorrosh Family Foundation
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                  <div className="bg-white text-amber-600 rounded-lg px-6 py-3 font-bold">
-                    <div className="text-3xl">10¢</div>
-                    <div className="text-sm">per tray</div>
+            <div className="text-center mb-8">
+              <h3 className="text-4xl font-bold mb-4">Featured Partner: Denny's</h3>
+              <p className="text-xl text-amber-100 mb-6">
+                Enjoy delicious meals at Denny's and support the Shorrosh Family Foundation with every order!
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
+                <div className="text-center">
+                  <div className="bg-white text-amber-600 rounded-full px-6 py-3 font-bold text-4xl inline-block mb-4">
+                    15¢
                   </div>
-                  <div className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3 border border-white/30">
-                    <div className="text-2xl font-bold">100%</div>
-                    <div className="text-sm">goes to charity</div>
-                  </div>
+                  <h4 className="font-bold text-2xl mb-3">Premium Items</h4>
+                  <ul className="text-amber-100 text-lg space-y-2">
+                    <li>✓ American Slam</li>
+                    <li>✓ Kids Meal with Meat</li>
+                  </ul>
                 </div>
               </div>
-              <div className="flex-shrink-0">
-                <div className="bg-white rounded-full p-8">
-                  <Menu className="w-24 h-24 text-amber-600" />
+              <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
+                <div className="text-center">
+                  <div className="bg-white text-amber-600 rounded-full px-6 py-3 font-bold text-4xl inline-block mb-4">
+                    10¢
+                  </div>
+                  <h4 className="font-bold text-2xl mb-3">Standard Items</h4>
+                  <ul className="text-amber-100 text-lg space-y-2">
+                    <li>✓ Bacon Cheeseburger</li>
+                    <li>✓ Desserts</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/30 backdrop-blur-sm rounded-xl p-6 border-2 border-white/50">
+              <div className="flex items-center justify-center gap-4">
+                <Menu className="w-12 h-12 text-white" />
+                <div className="text-center">
+                  <p className="text-2xl font-bold mb-2">Important: Tell the Cashier!</p>
+                  <p className="text-lg text-amber-100">
+                    Let them know you're from the <span className="font-bold">Shorrosh Foundation</span> to activate your donation
+                  </p>
                 </div>
               </div>
             </div>
@@ -4391,10 +4437,10 @@ const ShorroshFoundation = () => {
 
           <div className="mt-12 text-center">
             <p className="text-lg text-amber-100 mb-4">
-              It's simple: Enjoy your meal, and we'll handle the donation!
+              It's simple: Order your meal, mention the Shorrosh Foundation, and we'll handle the donation!
             </p>
-            <p className="text-amber-200">
-              No extra cost to you - just great food supporting great causes
+            <p className="text-amber-200 text-xl font-semibold">
+              100% of donations go directly to supporting our causes
             </p>
           </div>
         </div>
