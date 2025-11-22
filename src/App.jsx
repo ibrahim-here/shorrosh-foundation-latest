@@ -8,6 +8,10 @@ import wifeImg from './images/wife.jpg';
 import weddingImg from './images/wedding-pic.jpg';
 import weddingRight from './images/wedding.jpg';
 import logoImg from './images/final-logo.png';
+import tshirtImg from './images/store/t-shirt.png';
+import mugImg from './images/store/20251122_2109_Phoenix Mug Design_remix_01kap555czebg9xppp1wz8aesd.png';
+import keychainImg from './images/store/20251122_2134_Logo Keychain Display_remix_01kap6jxg4fatt534nrdw6wvsd.png';
+import pinImg from './images/store/20251122_2245_Embossed Phoenix Badge_remix_01kapap0dhe0zrcwn7rn9yssk1.png';
 
 // Email Collection Modal Component
 function EmailCollectionModal({ isOpen, onClose, onSubmit }) {
@@ -1340,28 +1344,28 @@ const MerchandiseStorePage = ({ setCurrentPage }) => {
       id: 1,
       name: 'Foundation T-Shirts',
       description: 'Premium quality t-shirts with foundation logo',
-      image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop',
+      image: tshirtImg,
       category: 'Apparel'
     },
     {
       id: 2,
       name: 'Coffee Mugs',
       description: 'Ceramic mugs supporting our causes',
-      image: 'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop',
+      image: mugImg,
       category: 'Drinkware'
     },
     {
       id: 3,
       name: 'Commemorative Pins',
       description: 'Collectible pins honoring our mission',
-      image: 'https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=400&h=400&fit=crop',
+      image: pinImg,
       category: 'Accessories'
     },
     {
       id: 4,
       name: 'Foundation Keychains',
       description: 'Durable keychains with foundation emblem',
-      image: 'https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=400&h=400&fit=crop',
+      image: keychainImg,
       category: 'Accessories'
     }
   ];
@@ -2157,13 +2161,18 @@ const DonationItemsPage = ({ setCurrentPage }) => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex-1">
               <h2 className="text-3xl font-bold mb-4">Dine & Donate at Denny's</h2>
-              <p className="text-xl text-amber-100">
-                Visit our partner restaurant Denny's and 10 cents from every tray goes directly to supporting our causes!
+              <p className="text-xl text-amber-100 mb-4">
+                Visit our partner restaurant Denny's and support our causes with every meal!
               </p>
-            </div>
-            <div className="flex-shrink-0">
-              <div className="bg-white text-amber-600 rounded-full px-8 py-4 font-bold text-2xl">
-                10¢ per tray
+              <div className="flex flex-col sm:flex-row gap-4 text-lg">
+                <div className="flex items-center gap-2">
+                  <span className="bg-white text-amber-600 rounded-full px-4 py-2 font-bold">15¢</span>
+                  <span>Premium Items</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="bg-white text-amber-600 rounded-full px-4 py-2 font-bold">10¢</span>
+                  <span>Standard Items</span>
+                </div>
               </div>
             </div>
           </div>
@@ -3635,7 +3644,7 @@ const ShorroshFoundation = () => {
             {/* Call-to-Action Buttons */}
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
               <a
-                href="https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID_HERE"
+                href="https://www.google.com/search?q=shorrosh-foundation&stick=H4sIAAAAAAAA_-NgU1I1qDBLNk4zMbM0NDawtDS0MDa3MqhIMUm1MDU2Tk4ztUg2tjROXcQqXJyRX1SUX5yhm5ZfmpeSWJKZnwcAPSyRbT8AAAA&hl=en-GB&mat=CUy9lh4Zl0XQElcBTVDHnqeLxo4lYthlAqggKAUM7d-e-769gabhOFca8LBDBNH9a7G6_2pYGmvX73-tezEKUu5GGwCTEIF404NnhaUFIkntqAu3S99yYVohQrzJ3C9KR_4&authuser=0#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-blue-900 text-white px-8 py-4 rounded-lg hover:bg-blue-800 transition-colors font-bold text-lg shadow-lg"
@@ -3644,7 +3653,7 @@ const ShorroshFoundation = () => {
                 Leave a Review on Google
               </a>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Shorrosh+Family+Foundation"
+                href="https://www.google.com/search?q=shorrosh-foundation&stick=H4sIAAAAAAAA_-NgU1I1qDBLNk4zMbM0NDawtDS0MDa3MqhIMUm1MDU2Tk4ztUg2tjROXcQqXJyRX1SUX5yhm5ZfmpeSWJKZnwcAPSyRbT8AAAA&hl=en-GB&mat=CUy9lh4Zl0XQElcBTVDHnqeLxo4lYthlAqggKAUM7d-e-769gabhOFca8LBDBNH9a7G6_2pYGmvX73-tezEKUu5GGwCTEIF404NnhaUFIkntqAu3S99yYVohQrzJ3C9KR_4&authuser=0#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-white text-blue-900 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-bold text-lg border-2 border-blue-900 shadow-lg"
@@ -4227,26 +4236,48 @@ const ShorroshFoundation = () => {
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/20">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="flex-1 text-center md:text-left">
-                <h3 className="text-3xl font-bold mb-4">Featured Partner: Denny's</h3>
-                <p className="text-xl text-amber-100 mb-6">
-                  Visit Denny's and 10 cents from every tray purchased goes directly to the Shorrosh Family Foundation
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                  <div className="bg-white text-amber-600 rounded-lg px-6 py-3 font-bold">
-                    <div className="text-3xl">10¢</div>
-                    <div className="text-sm">per tray</div>
+            <div className="text-center mb-8">
+              <h3 className="text-4xl font-bold mb-4">Featured Partner: Denny's</h3>
+              <p className="text-xl text-amber-100 mb-6">
+                Enjoy delicious meals at Denny's and support the Shorrosh Family Foundation with every order!
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
+                <div className="text-center">
+                  <div className="bg-white text-amber-600 rounded-full px-6 py-3 font-bold text-4xl inline-block mb-4">
+                    15¢
                   </div>
-                  <div className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3 border border-white/30">
-                    <div className="text-2xl font-bold">100%</div>
-                    <div className="text-sm">goes to charity</div>
-                  </div>
+                  <h4 className="font-bold text-2xl mb-3">Premium Items</h4>
+                  <ul className="text-amber-100 text-lg space-y-2">
+                    <li>✓ American Slam</li>
+                    <li>✓ Kids Meal with Meat</li>
+                  </ul>
                 </div>
               </div>
-              <div className="flex-shrink-0">
-                <div className="bg-white rounded-full p-8">
-                  <Menu className="w-24 h-24 text-amber-600" />
+              <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
+                <div className="text-center">
+                  <div className="bg-white text-amber-600 rounded-full px-6 py-3 font-bold text-4xl inline-block mb-4">
+                    10¢
+                  </div>
+                  <h4 className="font-bold text-2xl mb-3">Standard Items</h4>
+                  <ul className="text-amber-100 text-lg space-y-2">
+                    <li>✓ Bacon Cheeseburger</li>
+                    <li>✓ Desserts</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/30 backdrop-blur-sm rounded-xl p-6 border-2 border-white/50">
+              <div className="flex items-center justify-center gap-4">
+                <Menu className="w-12 h-12 text-white" />
+                <div className="text-center">
+                  <p className="text-2xl font-bold mb-2">Important: Tell the Cashier!</p>
+                  <p className="text-lg text-amber-100">
+                    Let them know you're from the <span className="font-bold">Shorrosh Foundation</span> to activate your donation
+                  </p>
                 </div>
               </div>
             </div>
@@ -4254,10 +4285,10 @@ const ShorroshFoundation = () => {
 
           <div className="mt-12 text-center">
             <p className="text-lg text-amber-100 mb-4">
-              It's simple: Enjoy your meal, and we'll handle the donation!
+              It's simple: Order your meal, mention the Shorrosh Foundation, and we'll handle the donation!
             </p>
-            <p className="text-amber-200">
-              No extra cost to you - just great food supporting great causes
+            <p className="text-amber-200 text-xl font-semibold">
+              100% of donations go directly to supporting our causes
             </p>
           </div>
         </div>
@@ -4864,7 +4895,7 @@ const ShorroshFoundation = () => {
           {/* Google Review Button */}
           <div className="pt-4 border-t border-red-500/30">
             <a
-              href="https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID_HERE"
+              href="https://www.google.com/search?q=shorrosh-foundation&stick=H4sIAAAAAAAA_-NgU1I1qDBLNk4zMbM0NDawtDS0MDa3MqhIMUm1MDU2Tk4ztUg2tjROXcQqXJyRX1SUX5yhm5ZfmpeSWJKZnwcAPSyRbT8AAAA&hl=en-GB&mat=CUy9lh4Zl0XQElcBTVDHnqeLxo4lYthlAqggKAUM7d-e-769gabhOFca8LBDBNH9a7G6_2pYGmvX73-tezEKUu5GGwCTEIF404NnhaUFIkntqAu3S99yYVohQrzJ3C9KR_4&authuser=0#"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-white text-red-600 px-6 py-3 rounded-lg hover:bg-red-50 transition-colors font-bold text-sm shadow-lg"
