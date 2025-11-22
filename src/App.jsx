@@ -2154,42 +2154,18 @@ const DonationItemsPage = ({ setCurrentPage }) => {
       {/* Restaurant Partnership Mention */}
       <section className="py-16 bg-gradient-to-r from-amber-500 to-amber-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold mb-4">Dine & Donate at Denny's</h2>
-            <p className="text-xl text-amber-100 mb-6">
-              Enjoy delicious meals while supporting our causes! Just tell the cashier you're from the Shorrosh Foundation.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
-              <div className="text-center">
-                <div className="bg-white text-amber-600 rounded-full px-6 py-3 font-bold text-3xl inline-block mb-3">
-                  15¢
-                </div>
-                <h3 className="font-bold text-xl mb-2">Premium Items</h3>
-                <ul className="text-amber-100 space-y-1">
-                  <li>• American Slam</li>
-                  <li>• Kids Meal with Meat</li>
-                </ul>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="flex-1">
+              <h2 className="text-3xl font-bold mb-4">Dine & Donate at Denny's</h2>
+              <p className="text-xl text-amber-100">
+                Visit our partner restaurant Denny's and 10 cents from every tray goes directly to supporting our causes!
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <div className="bg-white text-amber-600 rounded-full px-8 py-4 font-bold text-2xl">
+                10¢ per tray
               </div>
             </div>
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
-              <div className="text-center">
-                <div className="bg-white text-amber-600 rounded-full px-6 py-3 font-bold text-3xl inline-block mb-3">
-                  10¢
-                </div>
-                <h3 className="font-bold text-xl mb-2">Standard Items</h3>
-                <ul className="text-amber-100 space-y-1">
-                  <li>• Bacon Cheeseburger</li>
-                  <li>• Desserts</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="text-center mt-8">
-            <p className="text-lg font-semibold bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3 inline-block border border-white/30">
-              💡 Remember: Tell the cashier you're from the Shorrosh Foundation to activate the donation!
-            </p>
           </div>
         </div>
       </section>
@@ -3326,32 +3302,7 @@ const ShorroshFoundation = () => {
     </header>
   );
 
-  const HomePage = () => {
-    const [featuredProducts, setFeaturedProducts] = useState([]);
-    const [loadingProducts, setLoadingProducts] = useState(true);
-
-    useEffect(() => {
-      fetchFeaturedProducts();
-    }, []);
-
-    const fetchFeaturedProducts = async () => {
-      try {
-        const { data, error } = await supabase
-          .from('store_products')
-          .select('*')
-          .eq('is_available', true)
-          .limit(3);
-        
-        if (error) throw error;
-        setFeaturedProducts(data || []);
-      } catch (err) {
-        console.error('Error fetching featured products:', err);
-      } finally {
-        setLoadingProducts(false);
-      }
-    };
-
-    return (
+  const HomePage = () => (
     <div className="pt-20">
       <section className="relative text-white py-24 overflow-hidden min-h-[70vh]">
         {/* Background slides */}
@@ -3651,118 +3602,6 @@ const ShorroshFoundation = () => {
                 <p className="text-sm text-blue-200">Fighting hunger and feeding hope in our community</p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Products Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-red-600 font-semibold mb-2">SUPPORT OUR MISSION</p>
-            <h2 className="text-4xl font-bold text-blue-900 mb-4">Foundation Merchandise</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Show your support with our exclusive merchandise. 100% of proceeds go directly to our causes.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Hardcoded featured products - will be replaced with database products later */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop" 
-                  alt="Foundation T-Shirt" 
-                  className="w-full h-64 object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="text-xs text-red-600 font-semibold mb-2">Apparel</div>
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Foundation T-Shirt</h3>
-                <p className="text-gray-600 text-sm mb-4">Premium quality t-shirt with foundation logo</p>
-                <div className="text-2xl font-bold text-blue-900 mb-4">$25.00</div>
-                <button
-                  onClick={() => setCurrentPage('store')}
-                  className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors font-bold"
-                >
-                  View Details
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=400&fit=crop" 
-                  alt="Coffee Mug" 
-                  className="w-full h-64 object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="text-xs text-red-600 font-semibold mb-2">Drinkware</div>
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Coffee Mug</h3>
-                <p className="text-gray-600 text-sm mb-4">Ceramic mug with foundation emblem</p>
-                <div className="text-2xl font-bold text-blue-900 mb-4">$15.00</div>
-                <button
-                  onClick={() => setCurrentPage('store')}
-                  className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors font-bold"
-                >
-                  View Details
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=400&h=400&fit=crop" 
-                  alt="Commemorative Pin" 
-                  className="w-full h-64 object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="text-xs text-red-600 font-semibold mb-2">Accessories</div>
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Commemorative Pin</h3>
-                <p className="text-gray-600 text-sm mb-4">Collectible enamel pin honoring our mission</p>
-                <div className="text-2xl font-bold text-blue-900 mb-4">$10.00</div>
-                <button
-                  onClick={() => setCurrentPage('store')}
-                  className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors font-bold"
-                >
-                  View Details
-                </button>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=400&h=400&fit=crop" 
-                  alt="Foundation Keychain" 
-                  className="w-full h-64 object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="text-xs text-red-600 font-semibold mb-2">Accessories</div>
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Foundation Keychain</h3>
-                <p className="text-gray-600 text-sm mb-4">Durable metal keychain with foundation emblem</p>
-                <div className="text-2xl font-bold text-blue-900 mb-4">$8.00</div>
-                <button
-                  onClick={() => setCurrentPage('store')}
-                  className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors font-bold"
-                >
-                  View Details
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="text-center mt-12">
-            <button
-              onClick={() => setCurrentPage('store')}
-              className="inline-flex items-center bg-blue-900 text-white px-8 py-4 rounded-full hover:bg-blue-800 transition-colors font-bold text-lg"
-            >
-              View All Products
-              <ChevronRight className="w-5 h-5 ml-2" />
-            </button>
           </div>
         </div>
       </section>
@@ -4388,48 +4227,26 @@ const ShorroshFoundation = () => {
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/20">
-            <div className="text-center mb-8">
-              <h3 className="text-4xl font-bold mb-4">Featured Partner: Denny's</h3>
-              <p className="text-xl text-amber-100 mb-6">
-                Enjoy delicious meals at Denny's and support the Shorrosh Family Foundation with every order!
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
-                <div className="text-center">
-                  <div className="bg-white text-amber-600 rounded-full px-6 py-3 font-bold text-4xl inline-block mb-4">
-                    15¢
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="flex-1 text-center md:text-left">
+                <h3 className="text-3xl font-bold mb-4">Featured Partner: Denny's</h3>
+                <p className="text-xl text-amber-100 mb-6">
+                  Visit Denny's and 10 cents from every tray purchased goes directly to the Shorrosh Family Foundation
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                  <div className="bg-white text-amber-600 rounded-lg px-6 py-3 font-bold">
+                    <div className="text-3xl">10¢</div>
+                    <div className="text-sm">per tray</div>
                   </div>
-                  <h4 className="font-bold text-2xl mb-3">Premium Items</h4>
-                  <ul className="text-amber-100 text-lg space-y-2">
-                    <li>✓ American Slam</li>
-                    <li>✓ Kids Meal with Meat</li>
-                  </ul>
+                  <div className="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3 border border-white/30">
+                    <div className="text-2xl font-bold">100%</div>
+                    <div className="text-sm">goes to charity</div>
+                  </div>
                 </div>
               </div>
-              <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 border border-white/30">
-                <div className="text-center">
-                  <div className="bg-white text-amber-600 rounded-full px-6 py-3 font-bold text-4xl inline-block mb-4">
-                    10¢
-                  </div>
-                  <h4 className="font-bold text-2xl mb-3">Standard Items</h4>
-                  <ul className="text-amber-100 text-lg space-y-2">
-                    <li>✓ Bacon Cheeseburger</li>
-                    <li>✓ Desserts</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white/30 backdrop-blur-sm rounded-xl p-6 border-2 border-white/50">
-              <div className="flex items-center justify-center gap-4">
-                <Menu className="w-12 h-12 text-white" />
-                <div className="text-center">
-                  <p className="text-2xl font-bold mb-2">Important: Tell the Cashier!</p>
-                  <p className="text-lg text-amber-100">
-                    Let them know you're from the <span className="font-bold">Shorrosh Foundation</span> to activate your donation
-                  </p>
+              <div className="flex-shrink-0">
+                <div className="bg-white rounded-full p-8">
+                  <Menu className="w-24 h-24 text-amber-600" />
                 </div>
               </div>
             </div>
@@ -4437,10 +4254,10 @@ const ShorroshFoundation = () => {
 
           <div className="mt-12 text-center">
             <p className="text-lg text-amber-100 mb-4">
-              It's simple: Order your meal, mention the Shorrosh Foundation, and we'll handle the donation!
+              It's simple: Enjoy your meal, and we'll handle the donation!
             </p>
-            <p className="text-amber-200 text-xl font-semibold">
-              100% of donations go directly to supporting our causes
+            <p className="text-amber-200">
+              No extra cost to you - just great food supporting great causes
             </p>
           </div>
         </div>
